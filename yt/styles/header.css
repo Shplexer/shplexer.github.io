@@ -1,0 +1,104 @@
+.header{
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 10px;
+  z-index: 100;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(222, 222, 222);
+  background-color: white;
+}
+.left-section{
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.hamburgerMenu{
+  height: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+.YTLogo{
+  height: 20px;
+}
+
+.middle-section{
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 470px;
+  display: flex;
+  align-items: center;
+}
+
+.searchBar{
+  flex: 1;
+  height: 36px;
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-radius: 2px;
+  box-shadow: rgb(238, 238, 238) 0px 1px 2px 0px inset;
+  padding-left: 10px;
+  width: 0;
+}
+.searchBar::placeholder{
+  font-family: "Roboto","Arial",sans-serif;
+  font-size: 16px;
+  padding-left: 1px;
+}
+
+.searchButton{
+  height: 40px;
+  width: 66px;
+  background-color: rgb(248, 248, 248);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  margin-left: -1px;
+  margin-right: 10px;
+}
+.searchIcon{
+  height: 25px;
+  margin-top: 4px;
+}
+
+.voiceSearchButton{
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: none;
+  background-color: rgb(248, 248, 248);
+}
+.voiceSearchIcon{
+  height: 24px;
+  margin-top: 4px;
+}
+.right-section{
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.uploadIcon{
+  height: 24px;
+}
+.appsIcon{
+  height: 24px;
+}
+.notificationsIcon{
+  height: 24px;
+}
+.currentUserPicture{
+  height: 32px;
+  border-radius: 50%;
+}

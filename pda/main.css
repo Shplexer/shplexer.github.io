@@ -5,7 +5,7 @@
   width: 200%; 
   height: 200%;
  }
- .background img{
+.background img{
   position: absolute; 
   top: 0; 
   left: 0; 
@@ -16,13 +16,25 @@
   min-height: 50%;
  }
 
- .mapPic{
-  max-height: 100%;
+.mapContainer{
+  height: 85%;
+  width: 85%;
+  background:#ff0000;
+  position:relative;
+  margin: 0 auto;
+  overflow:hidden;
+  /*overflow-y:scroll;*/
 }
+.mapPicture{
+  width: 100%;
+  position:absolute;
+  background:#0000ff;
+  cursor:move;
+}
+
 .bottomMenu{
   display: flex;
   justify-content: space-between;
-  background-color: aquamarine;
   position:absolute;
   bottom: 0px;
   right: 10px;
