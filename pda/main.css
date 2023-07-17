@@ -31,7 +31,12 @@
   background:#0000ff;
   cursor:move;
 }
-
+.mapPicture2{
+  width: 400px;
+  position:absolute;
+  background:#0000ff;
+  cursor:move;
+}
 .bottomMenu{
   display: flex;
   justify-content: space-between;
@@ -53,7 +58,7 @@
 .camera{
   flex: 1;
 }
-#overlay {
+.overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
@@ -64,4 +69,31 @@
   background-color: rgba(203, 43, 43, 0.5); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
+}
+
+.task{
+  width: 500px;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  background: yellowgreen;
+  
+}
+
+.tasksContainer { 
+  display: flex;
+}
+.taskSection {
+  background: orangered;
+  display: flex;
+  flex-direction: column;
+}
+.blue {
+  background: steelblue;
+}
+.container div {
+  font-size: 25px;
+  padding: .5em;
+  color: white;
+  flex: 1;
 }

@@ -1,5 +1,8 @@
-function on() {
-  document.getElementById("overlay").style.display = "block";
+function mapOverlayOn() {
+  off('tasksOverlay');
+  off('cameraOverlay');
+  off('phoneOverlay');
+  document.getElementById("mapOverlay").style.display = "block";
 
   el = document.querySelector('.mapPicture');
   cont = document.querySelector('.mapContainer');
@@ -53,8 +56,30 @@ function on() {
   }
 }
 
-function off() {
-  document.getElementById("overlay").style.display = "none";
+function tasksOverlayOn(){
+  off('mapOverlay');
+  off('cameraOverlay');
+  off('phoneOverlay');
+  document.getElementById("tasksOverlay").style.display = "block";
+}
+
+function phoneOverlayOn(){
+  off('mapOverlay');
+  off('tasksOverlay');
+  off('cameraOverlay');
+  document.getElementById("phoneOverlay").style.display = "block";
+}
+
+function cameraOverlayOn(){
+  off('mapOverlay');
+  off('tasksOverlay');
+  off('phoneOverlay');
+  document.getElementById("cameraOverlay").style.display = "block";
+}
+
+function off(name) {
+  console.log(name, " OFF");
+  document.getElementById(name).style.display = "none";
 } 
 
 
