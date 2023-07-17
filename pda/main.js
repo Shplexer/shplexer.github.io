@@ -78,7 +78,7 @@ function cameraOverlayOn(){
 }
 
 function off(name) {
-  console.log(name, " OFF");
+  console.log(name, "OFF");
   document.getElementById(name).style.display = "none";
 } 
 
