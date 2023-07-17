@@ -32,10 +32,20 @@
   cursor:move;
 }
 .mapPicture2{
-  width: 400px;
+  width: 100%;
   position:absolute;
   background:#0000ff;
   cursor:move;
+}
+.mapContainer2{
+  height: 80%;
+  width: 50%;
+  background:#ff0000;
+  position:relative;
+  margin: 0 auto;
+  margin-top: 3%;
+  overflow:hidden;
+  /*overflow-y:scroll;*/
 }
 .bottomMenu{
   display: flex;
@@ -67,29 +77,26 @@
   right: 0;
   bottom: 50px;
   background-color: rgba(203, 43, 43, 0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
 }
 
 .task{
   width: 500px;
   display: flex;
-  flex: 1;
   justify-content: space-between;
   background: yellowgreen;
-  
 }
 
 .tasksContainer { 
   display: flex;
+  bottom: 1px;
+  height: 100%;
+  
 }
 .taskSection {
   background: orangered;
   display: flex;
   flex-direction: column;
-}
-.blue {
-  background: steelblue;
 }
 .container div {
   font-size: 25px;
