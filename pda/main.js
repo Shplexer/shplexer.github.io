@@ -12,7 +12,7 @@ function mapOverlayOn() {
   let mousePos = { x: undefined, y: undefined };
   window.addEventListener('mousemove', (event) => {
     mousePos = { x: event.clientX - cont.getBoundingClientRect().left + el.offsetLeft * (-1), y: event.clientY - cont.getBoundingClientRect().top + el.offsetTop * (-1)};
-    if(Math.round(mousePos.x) >= 0 && Math.round(mousePos.y) >= 0){
+    if(Math.round(mousePos.x) >= 0 && event.clientX - cont.getBoundingClientRect().right <=0 && event.clientY - cont.getBoundingClientRect().bottom <=0 && Math.round(mousePos.y) >= 0){
       mousePosText.textContent = `(${Math.round(mousePos.x)}, ${Math.round(mousePos.y)})`;
     }
   });
@@ -69,7 +69,7 @@ function tasksOverlayOn(){
   let mousePos = { x: undefined, y: undefined };
   window.addEventListener('mousemove', (event) => {
     mousePos = { x: event.clientX - cont.getBoundingClientRect().left + el.offsetLeft * (-1), y: event.clientY - cont.getBoundingClientRect().top + el.offsetTop * (-1)};
-    if(Math.round(mousePos.x) >= 0 && Math.round(mousePos.y) >= 0){
+    if(Math.round(mousePos.x) >= 0 && event.clientX - cont.getBoundingClientRect().right <=0 && event.clientY - cont.getBoundingClientRect().bottom <=0 && Math.round(mousePos.y) >= 0){
       mousePosText.textContent = `(${Math.round(mousePos.x)}, ${Math.round(mousePos.y)})`;
     }
   });
@@ -126,6 +126,7 @@ function cameraOverlayOn(){
   off('tasksOverlay');
   off('phoneOverlay');
   document.getElementById("cameraOverlay").style.display = "block";
+  document.getElementById("fl").classList.toggle('flash animated');
 }
 
 function off(name) {

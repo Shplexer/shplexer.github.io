@@ -4,6 +4,9 @@
     <title>КПК</title>
     <link rel="styleSheet" href="main.css">
     <script src="main.js"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="interface">
@@ -11,7 +14,7 @@
         <img src="pics/3311419.jpg">
       </div>
       <div class="overlay" id="mapOverlay"> 
-        <p>Pos: <b><span id="mouse-pos"></span></b> </p>
+        <p style="background-color: rgb(223, 57, 57); width: 9%;">Pos: <b><span id="mouse-pos"></span></b> </p>
         <div class="mapContainer">
           <img src="pics/fbnkkxaxj7cb1.jpg" class="mapPicture">
         </div>
@@ -19,15 +22,15 @@
       
       <div class="overlay" id="tasksOverlay">
         <div class="tasksContainer">
-          <div class="taskSection"><h1>TASKS</h1>
-            <div class ="task"> <p>&#8226;</p> <p> Стейки у Ашота</p> <p>(300)</p> </div>
-            <div class ="task"> <p>&#8226;</p> <p> Три Склянки</p> <p> (50)</p> </div>
-            <div class ="task"> <p>&#8226;</p> <p> Ночной Городок</p> <p>(100)</p> </div>
-            <div class ="task"> <p>&#8226;</p> <p> Свалка</p> <p>(100)</p> </div>
+          <div class="taskSection"><h1 style="font-family: 'Tektur', cursive; font-size: 50px; margin-bottom: 0;">ЗАДАЧИ</h1>
+            <div class ="task complete"> <p> Три Склянки</p> <p> (50)</p> </div>
+            <div class ="task failed"> <p> Стейки у Ашота</p> <p>(300)</p> </div>
+            <div class ="task complete"> <p> Ночной Городок</p> <p>(100)</p> </div>
+            <div class ="task pending"> <p> Свалка</p> <p>(100)</p> </div>
           </div>
           
           <div class="mapContainer2">
-            <p style="position:fixed; z-index: 200; background-color: aliceblue;">Pos: <b> <span id="mouse-pos2"></span> </b> </p>
+            <p style="position:fixed; z-index: 200; background-color: rgb(223, 57, 57);">Pos: <b> <span id="mouse-pos2"></span> </b> </p>
             <img src="pics/fbnkkxaxj7cb1.jpg" class="mapPicture2"></div>
         </div>
       </div>
@@ -37,25 +40,28 @@
       </div>
       
       <div class="overlay" id="cameraOverlay">
-        cameraOverlay
+        <div class = 'cameraDiv ' >
+          <img src="pics/f1f1994bd3fc560875f34dce1815be18.jpg">
+          <img src="pics/images.jpg" class ="flash animated">
+        </div>
       </div>
       
     </div>
-    <script>tasksOverlayOn()</script>
+    
     
     <div class="bottomMenu">
-      <button onclick="tasksOverlayOn()" class="tasks">
-      Tasks
-    </button>
-      <button onclick="mapOverlayOn()" class="map">
-        Map
-      </button>
-      <button onclick="phoneOverlayOn()" class="phone">
-        Phone
-      </button>
-      <button onclick="cameraOverlayOn()" class="camera">
-        Camera  
-      </button>
+      <div onclick="tasksOverlayOn()" class="tasks animation">
+        Задачи
+      </div>
+      <div onclick="mapOverlayOn()" class="map animation ">
+        Карта
+      </div>
+      <div onclick="phoneOverlayOn()" class="phone animation">
+        ID
+      </div>
+      <div onclick="cameraOverlayOn()" class="camera animation">
+        Камера  
+      </div>
     </div>
 
   </body>

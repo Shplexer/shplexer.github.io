@@ -1,3 +1,10 @@
+p{
+  font-family: 'Tektur', cursive;
+}
+div{
+  font-family: 'Tektur', cursive;
+  
+}
 .background{
   position: fixed; 
   top: -50%; 
@@ -19,7 +26,7 @@
 .mapContainer{
   height: 85%;
   width: 85%;
-  background:#ff0000;
+  background:rgba(150, 26, 26, 0.25);
   position:relative;
   margin: 0 auto;
   overflow:hidden;
@@ -28,19 +35,19 @@
 .mapPicture{
   width: 100%;
   position:absolute;
-  background:#0000ff;
+  background:rgba(150, 26, 26, 0.25);
   cursor:move;
 }
 .mapPicture2{
   width: 100%;
   position:absolute;
-  background:#0000ff;
+  background:rgba(150, 26, 26, 0.25);
   cursor:move;
 }
 .mapContainer2{
-  height: 80%;
-  width: 50%;
-  background:#ff0000;
+  height: 90%;
+  width: 70%;
+  background:rgba(150, 26, 26, 0.25);
   position:relative;
   margin: 0 auto;
   margin-top: 3%;
@@ -52,21 +59,59 @@
   justify-content: space-between;
   position:absolute;
   bottom: 0px;
-  right: 10px;
-  left: 10px;
+  right: 0px;
+  left: 0px;
   height: 50px;
+  z-index: 10000;
 }
-.tasks{
+
+.tasks, .map, .phone, .camera{
   flex: 1;
+  background-color: rgba(255, 64, 64, 0.8);
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+  font-size: large;
 }
-.map{
-  flex: 1;
+.animation{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color;
 }
-.phone{
-  flex: 1;
+.animation:hover, .animation:focus, .animation:active {
+  -webkit-animation-name: animation;
+  animation-name: animation;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: rgba(255, 64, 64, 0.8);
+  background-color: rgba(255, 64, 64, 0.8);
+  color: #03d8f3;
 }
-.camera{
-  flex: 1;
+@-webkit-keyframes animation {
+  50% {
+    background-color: rgba(255, 64, 64, 1);
+  }
+}
+@keyframes animation {
+  50% {
+    background-color: rgba(255, 64, 64, 1);
+  }
+}
+.tasks:hover, .map:hover, .phone:hover, .camera:hover{
+  cursor: pointer;
 }
 .overlay {
   position: fixed; /* Sit on top of the page content */
@@ -76,25 +121,41 @@
   left: 0;
   right: 0;
   bottom: 50px;
-  background-color: rgba(203, 43, 43, 0.5); /* Black background with opacity */
+  background-color: rgba(150, 26, 26, 0.5); /* Black background with opacity */
   z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
 }
 
 .task{
-  width: 500px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
-  background: yellowgreen;
+  border-color: black;
+  background: rgba(212, 55, 55, 0.7);
+  border-style: solid;
+  border-width: 1px;
+  margin: 3px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.failed{
+  text-decoration: line-through;
+  background-color: rgba(122, 132, 136, 0.748);
+}
+.pending{
+  background-color: rgba(252, 237, 10, 0.7);
+
 }
 
 .tasksContainer { 
   display: flex;
-  bottom: 1px;
   height: 100%;
   
 }
 .taskSection {
-  background: orangered;
+  padding-left: 1%;
+  width: 24%;
+  background: rgba(255, 65, 65, 0.25);
   display: flex;
   flex-direction: column;
 }
@@ -103,4 +164,45 @@
   padding: .5em;
   color: white;
   flex: 1;
+}
+
+
+.cameraDiv{
+  position: fixed; 
+  width: 100%; 
+  height: 100%;
+ }
+.cameraDiv img{
+  position: absolute; 
+  top: -50px; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.animated {
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top:50px;
+  margin-bottom: 50px;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.flash {
+  animation-name: flash;
+  width: 100%;
+}
+@keyframes flash {
+  0%, 50%, 100% {
+     opacity: 0;
+  }
+  25%, 75% {
+     opacity: 1;
+  }
 }
