@@ -1,0 +1,306 @@
+p{
+  font-family: 'Tektur', Arial, Helvetica, sans-serif;
+  
+}
+div{
+  font-family: 'Tektur', Arial, Helvetica, sans-serif; 
+}
+h1{
+  font-family: 'Tektur', cursive; 
+  margin-left: 1%; 
+  font-size: 50px; 
+  margin-bottom: 0; 
+  color: rgba(2, 214, 242, 0.777);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.background{ 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+}
+ .backgroundImg{
+  width: 100%; height: 100%;
+  object-fit: cover; 
+  object-position: center;
+}
+
+.mapContainer{
+  height: 85%;
+  width: 85%;
+  background:rgba(150, 26, 26, 0.25);
+  position:relative;
+  margin: 0 auto;
+  overflow:hidden;
+  /*overflow-y:scroll;*/
+}
+.mapPicture{
+  width: 100%;
+  position:absolute;
+  background:rgba(150, 26, 26, 0.25);
+  cursor:move;
+}
+.mapPicture2{
+  max-width: 100%;
+  position:absolute;
+  background:rgba(150, 26, 26, 0.25);
+  cursor:move;
+}
+.mapContainer2{
+  height: 90%;
+  width: 70%;
+  background:rgba(150, 26, 26, 0.25);
+  position:relative;
+  margin: 0 auto;
+  margin-top: 3%;
+  overflow:hidden;
+  /*overflow-y:scroll;*/
+}
+.bottomMenu{
+  display: flex;
+  justify-content: space-between;
+  position:absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  height: 50px;
+  z-index: 10000;
+}
+
+.tasks, .map, .phone, .camera{
+  flex: 1;
+  background-color: rgba(255, 64, 64, 0.8);
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+  font-size: large;
+}
+.animation{
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color;
+}
+.animation:hover, .animation:focus, .animation:active {
+  -webkit-animation-name: animation;
+  animation-name: animation;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-color: rgba(255, 64, 64, 0.8);
+  background-color: rgba(255, 64, 64, 0.8);
+  color: #03d8f3;
+}
+@-webkit-keyframes animation {
+  50% {
+    background-color: rgba(255, 64, 64, 1);
+  }
+}
+@keyframes animation {
+  50% {
+    background-color: rgba(255, 64, 64, 1);
+  }
+}
+.tasks:hover, .map:hover, .phone:hover, .camera:hover{
+  cursor: pointer;
+}
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  max-width: 100%; /* Full width (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  background-color: rgba(150, 26, 26, 0.5); /* Black background with opacity */
+  z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+}
+.mouse1{
+  background-color: rgb(223, 57, 57);
+  max-width: 9%;
+}
+.mouse2{
+  position:fixed;
+  z-index: 200; 
+  background-color: rgb(223, 57, 57);
+}
+.task{
+  max-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  border-color: black;
+  background: rgba(212, 55, 55, 0.7);
+  border-style: solid;
+  border-width: 1px;
+  margin: 3px;
+  padding: 5px;
+  font-size: 20px;
+}
+.failed{
+  background-color: rgba(122, 132, 136, 0.748);
+}
+.failed p{
+  text-decoration: line-through;
+}
+.pending{
+  background-color: rgba(252, 237, 10, 0.7);
+}
+.complete{
+  background-color: rgba(2, 214, 242, 0.777);
+}
+.checkmark{
+  width: 20%;
+  font-size: 50px;
+  background-color: rgba(255, 64, 64, 0.8);
+  border: black;
+  border-style: solid;
+  border-width: 1px;
+  transition: color 0.2s;
+}
+.checkmark:hover{
+  color: #03d8f3;
+}
+
+.tasksContainer { 
+  display: flex;
+  height: 100%;
+  
+}
+.taskSection {
+  padding-left: 1%;
+  max-width: 24%;
+  background: rgba(255, 65, 65, 0.25);
+  display: flex;
+  flex:1;
+  flex-direction: column;
+}
+.container div {
+  font-size: 25px;
+  padding: .5em;
+  color: white;
+  flex: 1;
+}
+
+
+.cameraDiv{
+  height: 100%;
+ }
+.cameraDiv img{
+  position: absolute; 
+  top: 0; 
+  left: 0%; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+
+}
+
+.animated {
+  background-repeat: no-repeat;
+  background-position: left top;
+  margin-bottom: 50px;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.flash {
+  animation-name: flash;
+  width: 100%;
+  height: 100%;
+}
+@keyframes flash {
+  0%, 50%, 100% {
+     opacity: 0;
+  }
+  25%, 75% {
+     opacity: 1;
+  }
+}
+
+#check5{
+  opacity: 0;
+}
+
+@media screen and (max-width: 479px) {
+  p,div{
+    font-size: 6vw;
+  }
+  h1{
+    padding-left: 0%;
+  }
+  .tasks{
+    flex:1.5;
+  }
+  .background{
+    width: 100%;
+    height: 100%;
+  }
+  .backgroundImg{
+    width: 100%; height: 100%;
+    object-fit: cover; 
+    object-position: center;
+  }
+  .mapContainer{
+
+    position:relative;
+    height: 60%;
+    overflow:hidden;
+    /*overflow-y:scroll;*/
+  }
+  .mapPicture{
+
+    height: 100%;
+  }
+  .mapPicture2{
+    max-width: 0%;
+    max-height: 0%;
+  }
+  .mapContainer2{
+    max-width: 0%;
+    max-height: 0%;
+  }
+  .tasksContainer { 
+    display: flex;
+    height: 100%;
+    
+  }
+  .taskSection {
+    flex:1;
+    padding-left: 5%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .mouse1{
+    margin-top: 10%;
+    font-size: 4vw;
+    max-width: 40%;
+  }
+  .mouse2{
+    opacity: 0;
+  }
+  .camPic{
+    width:100%; height:100%;
+  }
+  .flash {
+    animation-name: flash;
+    width:100%; height:150%;
+  }
+}

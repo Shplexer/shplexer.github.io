@@ -12,7 +12,7 @@
   <body>
     <div class="interface">
       <div class="background">
-        <img class="backgroundImg" src="pics/3311419.jpg">
+        <img class="backgroundImg" src="pics/Biotechnica-Logo_upscaled.jpg">
       </div>
       <div class="overlay" id="mapOverlay"> 
         <p class="mouse1">Pos: <b><span id="mouse-pos"></span></b> </p>
@@ -22,21 +22,15 @@
       </div>
       <div class="overlay" id="tasksOverlay">
         <div class="tasksContainer">
-          <div class="taskSection"><h1 style="font-family: 'Tektur', cursive; margin-left:1%; font-size: 50px; margin-bottom: 0;">КОНТРАКТ</h1>
-            <div class ="task complete" id="check1" >
-              <p style="flex: 1"> Три Склянки</p> <p style="margin-right: 2%;"> (50)</p> <button id="checkButton1"class="checkmark" onclick="checkmarkPress('check1', 'checkButton1')" >&#10003</button>
-            </div>
-            <div class ="task failed" id="check2">
-              <p style="flex: 1"> Стейки у Ашота</p> <p style="margin-right: 2%;">(300)</p> <button id="checkButton2" class="checkmark" onclick="checkmarkPress('check2', 'checkButton2')">&#10006</button>
-            </div>
+          <div class="taskSection"><h1 style="font-family: 'Tektur', cursive; margin-left:1%; font-size: 50px; margin-bottom: 0;">НАЗНАЧЕНИЕ</h1>
             <div class ="task complete" id="check3">
-              <p style="flex: 1"> Ночной Городок</p> <p style="margin-right: 2%;">(100)</p> <button id="checkButton3" class="checkmark" onclick="checkmarkPress('check3', 'checkButton3')">&#10003</button>
+              <p style="flex: 1"> Установить контакт с представителем "Оазиса". Доверять не рекомендуется.</p> <button id="checkButton3" class="checkmark" onclick="checkmarkPress('check3', 'checkButton3')">&#10003</button>
             </div>
             <div class ="task pending" id="check4">
-              <p style="flex: 1"> Свалка</p> <p style="margin-right: 2%;">(100)</p> <button id="checkButton4" class="checkmark" onclick="checkmarkPress('check4', 'checkButton4')">?</button> 
+              <p style="flex: 1"> Установить контакт с объектом "Часовой".</p> <button id="checkButton4" class="checkmark" onclick="checkmarkPress('check4', 'checkButton4')">?</button> 
             </div>
             <div class ="task pending" id="check5">
-              <p style="flex: 1; "> Вернуться к Начальнику</p>  <button id="checkButton5" class="checkmark" onclick="checkmarkPress('check5', 'checkButton5')">?</button> 
+              <p style="flex: 1; "> Ожидать указаний от организации.</p>  <button id="checkButton5" class="checkmark" onclick="checkmarkPress('check5', 'checkButton5')">?</button> 
             </div>
           </div>
           
@@ -59,11 +53,9 @@
       
     </div>
     
-    <script>tasksOverlayOn()</script>
-    
     <div class="bottomMenu">
       <div onclick="tasksOverlayOn()" class="tasks animation">
-        Контракт
+        Назначение
       </div>
       <div onclick="mapOverlayOn()" class="map animation ">
         Карта

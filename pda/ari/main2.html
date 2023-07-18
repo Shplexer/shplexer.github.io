@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>КПК</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="styleSheet" href="main.css">
+    <script src="main.js"></script> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="interface">
+      <div class="background">
+        <img class="backgroundImg" src="pics/Logo_upscaled.jpg">
+      </div>
+      <div class="overlay" id="mapOverlay"> 
+        <p class="mouse1">Pos: <b><span id="mouse-pos"></span></b> </p>
+        <div class="mapContainer">
+          <img src="pics/map(definitely not stolen).jpeg" class="mapPicture">
+        </div>
+      </div>
+      <div class="overlay" id="tasksOverlay">
+        <div class="tasksContainer">
+          <div class="taskSection"><h1>НАЗНАЧЕНИЕ</h1>
+            <div class ="task complete" id="check3">
+              <p style="flex: 1"> Установить контакт с представителем "Биотехники". Кооперировать в пределах разумного.</p> <button id="checkButton3" class="checkmark" onclick="checkmarkPress('check3', 'checkButton3')">&#10003</button>
+            </div>
+            <div class ="task pending" id="check4">
+              <p style="flex: 1"> Установить контакт с объектом "Часовой".</p> <button id="checkButton4" class="checkmark" onclick="checkmarkPress('check4', 'checkButton4')">?</button> 
+            </div>
+            <div class ="task pending" id="check5">
+              <p style="flex: 1; "> Ожидать указаний от организации.</p>  <button id="checkButton5" class="checkmark" onclick="checkmarkPress('check5', 'checkButton5')">?</button> 
+            </div>
+          </div>
+          
+          <div class="mapContainer2">
+            <p class="mouse2">Pos: <b> <span id="mouse-pos2"></span> </b> </p>
+            <img src="pics/map(definitely not stolen).jpeg" class="mapPicture2"></div>
+        </div>
+      </div>
+      
+      <div class="overlay" id="phoneOverlay">
+        phoneOverlay
+      </div>
+      
+      <div class="overlay" id="cameraOverlay">
+        <div class = 'cameraDiv ' >
+          <img class="camPic" src="pics/f1f1994bd3fc560875f34dce1815be18.jpg">
+          <img src="pics/images.jpg" class ="flash animated">
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="bottomMenu">
+      <div onclick="tasksOverlayOn()" class="tasks animation">
+        Назначение
+      </div>
+      <div onclick="mapOverlayOn()" class="map animation ">
+        Карта
+      </div>
+      <div onclick="phoneOverlayOn()" class="phone animation">
+        ID
+      </div>
+      <div onclick="cameraOverlayOn()" class="camera animation">
+        Камера  
+      </div>
+    </div>
+
+  </body>
+
+</html>

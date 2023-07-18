@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>КПК</title>
+    <link rel="styleSheet" href="main.css">
+    <script src="main.js"></script> 
+  </head>
+  <body>
+    <div class="interface">
+      <div class="overlay" id="mapOverlay"> 
+        <p>
+          Pos: <b><span id="mouse-pos"></span></b>
+        </p>
+        <div class="mapContainer">
+          <img src="pics/fbnkkxaxj7cb1.jpg" class="mapPicture">
+        </div>
+      </div>
+
+      <div class="overlay" id="tasksOverlay">
+        <div class ="Task1"> <p>&#8226;</p> <p> Стейки у Ашота</p> <p>(300)</p> </div>
+        <div class ="Task1"> <p>&#8226;</p> <p> Три Склянки</p> <p> (50)</p> </div>
+        <div class ="Task1">  <p>&#8226;</p> <p> Ночной Городок</p> <p>(100)</p>
+        </div>
+        <div class ="Task1">
+        </div>
+        <div class ="Task1">
+          <p>&#8226;</p> <p> Свалка</p> <p>(100)</p>
+        </div>
+        <div>
+          kekus
+        </div>
+      </div>
+
+      <div class="overlay" id="phoneOverlay">
+        phoneOverlay
+      </div>
+
+      <div class="overlay" id="cameraOverlay">
+        cameraOverlay
+      </div>
+
+        <div class="background">
+          <img src="pics/3311419.jpg">
+        </div>
+      </div>
+
+    <div class="bottomMenu">
+      <button onclick="tasksOverlayOn()" class="tasks">
+        <script>tasksOverlayOn()</script>
+        Tasks
+      </button>
+      <button onclick="mapOverlayOn()" class="map">
+        Map
+      </button>
+      <button onclick="phoneOverlayOn()" class="phone">
+        Phone
+      </button>
+      <button onclick="cameraOverlayOn()" class="camera">
+        Camera  
+      </button>
+    </div>
+
+  </body>
+
+</html>
