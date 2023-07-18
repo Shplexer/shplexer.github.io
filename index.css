@@ -118,7 +118,7 @@ h1{
     object-position: bottom;
   }
   .chooseYourFighter{
-    opacity: 0.95;
+    opacity: 1;
     left: 0px;
     top:25%;
     flex-direction: column;
