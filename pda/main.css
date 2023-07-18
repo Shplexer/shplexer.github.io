@@ -5,12 +5,11 @@ div{
   font-family: 'Tektur', cursive;
   
 }
-.background{
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
+.background{ 
+  position: fixed;
+  top:45%;
+  left: 0px;
+  max-height: 100%; 
  }
 .background img{
   position: absolute; 
@@ -39,7 +38,7 @@ div{
   cursor:move;
 }
 .mapPicture2{
-  width: 100%;
+  max-width: 100%;
   position:absolute;
   background:rgba(150, 26, 26, 0.25);
   cursor:move;
@@ -116,7 +115,7 @@ div{
 .overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
+  max-width: 100%; /* Full width (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
@@ -126,7 +125,7 @@ div{
 }
 
 .task{
-  width: 90%;
+  max-width: 90%;
   display: flex;
   justify-content: space-between;
   border-color: black;
@@ -154,7 +153,7 @@ div{
 }
 .taskSection {
   padding-left: 1%;
-  width: 24%;
+  max-width: 24%;
   background: rgba(255, 65, 65, 0.25);
   display: flex;
   flex-direction: column;
