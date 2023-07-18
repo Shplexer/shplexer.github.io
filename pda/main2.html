@@ -12,27 +12,37 @@
   <body>
     <div class="interface">
       <div class="background">
-        <img src="pics/3311419.jpg">
+        <img class="backgroundImg" src="pics/3311419.jpg">
       </div>
       <div class="overlay" id="mapOverlay"> 
         <p class="mouse1">Pos: <b><span id="mouse-pos"></span></b> </p>
         <div class="mapContainer">
-          <img src="pics/fbnkkxaxj7cb1.jpg" class="mapPicture">
+          <img src="pics/21ecd31ccabda6479b562e3ef18337f0_43985654e22fbc0cead03c70e87235b9-transformed.webp" class="mapPicture">
         </div>
       </div>
-      
       <div class="overlay" id="tasksOverlay">
         <div class="tasksContainer">
-          <div class="taskSection"><h1 style="font-family: 'Tektur', cursive; font-size: 50px; margin-bottom: 0;">ЗАДАЧИ</h1>
-            <div class ="task complete"> <p> Три Склянки</p> <p> (50)</p> </div>
-            <div class ="task failed"> <p> Стейки у Ашота</p> <p>(300)</p> </div>
-            <div class ="task complete"> <p> Ночной Городок</p> <p>(100)</p> </div>
-            <div class ="task pending"> <p> Свалка</p> <p>(100)</p> </div>
+          <div class="taskSection"><h1 style="font-family: 'Tektur', cursive; margin-left:1%; font-size: 50px; margin-bottom: 0;">КОНТРАКТ</h1>
+            <div class ="task complete" id="check1" >
+              <p style="flex: 1"> Три Склянки</p> <p style="margin-right: 2%;"> (50)</p> <button id="checkButton1"class="checkmark" onclick="checkmarkPress('check1', 'checkButton1')" >&#10003</button>
+            </div>
+            <div class ="task failed" id="check2">
+              <p style="flex: 1"> Стейки у Ашота</p> <p style="margin-right: 2%;">(300)</p> <button id="checkButton2" class="checkmark" onclick="checkmarkPress('check2', 'checkButton2')">&#10006</button>
+            </div>
+            <div class ="task complete" id="check3">
+              <p style="flex: 1"> Ночной Городок</p> <p style="margin-right: 2%;">(100)</p> <button id="checkButton3" class="checkmark" onclick="checkmarkPress('check3', 'checkButton3')">&#10003</button>
+            </div>
+            <div class ="task pending" id="check4">
+              <p style="flex: 1"> Свалка</p> <p style="margin-right: 2%;">(100)</p> <button id="checkButton4" class="checkmark" onclick="checkmarkPress('check4', 'checkButton4')">?</button> 
+            </div>
+            <div class ="task pending" id="check5">
+              <p style="flex: 1; "> Вернуться к Начальнику</p>  <button id="checkButton5" class="checkmark" onclick="checkmarkPress('check5', 'checkButton5')">?</button> 
+            </div>
           </div>
           
           <div class="mapContainer2">
             <p class="mouse2">Pos: <b> <span id="mouse-pos2"></span> </b> </p>
-            <img src="pics/fbnkkxaxj7cb1.jpg" class="mapPicture2"></div>
+            <img src="pics/21ecd31ccabda6479b562e3ef18337f0_43985654e22fbc0cead03c70e87235b9-transformed.webp" class="mapPicture2"></div>
         </div>
       </div>
       
@@ -42,17 +52,18 @@
       
       <div class="overlay" id="cameraOverlay">
         <div class = 'cameraDiv ' >
-          <img src="pics/f1f1994bd3fc560875f34dce1815be18.jpg">
+          <img class="camPic" src="pics/f1f1994bd3fc560875f34dce1815be18.jpg">
           <img src="pics/images.jpg" class ="flash animated">
         </div>
       </div>
       
     </div>
     
+    <script>tasksOverlayOn()</script>
     
     <div class="bottomMenu">
       <div onclick="tasksOverlayOn()" class="tasks animation">
-        Задачи
+        Контракт
       </div>
       <div onclick="mapOverlayOn()" class="map animation ">
         Карта

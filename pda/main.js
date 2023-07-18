@@ -126,7 +126,6 @@ function cameraOverlayOn(){
   off('tasksOverlay');
   off('phoneOverlay');
   document.getElementById("cameraOverlay").style.display = "block";
-  document.getElementById("fl").classList.toggle('flash animated');
 }
 
 function off(name) {
@@ -134,5 +133,37 @@ function off(name) {
   document.getElementById(name).style.display = "none";
 } 
 
-
-
+function checkmarkPress(name, checkboxName){
+  let elem = document.getElementById(checkboxName);
+  let cont = document.getElementById(name);
+  str = elem.textContent
+  switch (str) {
+    case "✓" || "&#10003":
+      elem.innerHTML ="&#10006";
+      cont.classList.add("failed");
+      cont.classList.remove("complete");
+      cont.classList.remove("pending");
+      break;
+    case "✖" || "&#10006":
+      elem.innerHTML = "?";
+      cont.classList.add("pending");
+      cont.classList.remove("failed");
+      cont.classList.remove("complete");
+      break;
+    case "?":
+      elem.innerHTML = "&#10003";
+      cont.classList.add("complete");
+      cont.classList.remove("failed");
+      cont.classList.remove("pending");
+      break;
+    default:
+      break;
+  }
+  if(document.getElementById("checkButton4").textContent == "✖" ||document.getElementById("checkButton4").textContent =="&#10006"|| document.getElementById("checkButton4").textContent == "✓" || document.getElementById("checkButton4").textContent == "&#10003"){
+    document.getElementById("check5").style.opacity = 1;
+    console.log("SWITCH", str);
+  }
+  else{
+    document.getElementById("check5").style.opacity = 0;
+  }
+}
