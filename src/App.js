@@ -4,23 +4,27 @@ import { API } from './services/api';
 
 function App() {
 	const [selectedUserId, setSelectedUserId] = useState(null);
+	const [filters, setFilters] = useState(null);
 
 	const handleChooseUser = (userId) => {
 		setSelectedUserId(userId);
-		console.log(userId);
 	}
 
 	const handleCloseDetails = () => {
 		setSelectedUserId(null);
+	}
+	const handleConfirmFilters = (filters) =>{
+		setFilters(filters);
 	}
 	return (
 		<div className='App'>
 			<p className='title'>Таблица пользователей</p>
 
 			<div className='content-area'>
-				<FiltersSidebar />
+				<FiltersSidebar onFiltersClick={handleConfirmFilters}/>
 				<Table
 					onUserClick={handleChooseUser}
+					filters={filters}
 				/>
 			</div>
 			{selectedUserId &&
@@ -32,7 +36,7 @@ function App() {
 	);
 }
 
-function FiltersSidebar() {
+function FiltersSidebar({ onFiltersClick }) {
 	const [formData, setFormData] = useState({
 		lastName: "",
 		firstName: "",
@@ -59,15 +63,12 @@ function FiltersSidebar() {
 		{ id: "maidenName", label: "Отчество", type: "text" },
 		{ id: "age", label: "Возраст", type: "number" },
 		{ id: "gender", label: "Пол", type: "text" },
-		{ id: "phone", label: "Номер телефона", type: "tel" },
-		{ id: "email", label: "Email", type: "email" },
-		{ id: "country", label: "Страна", type: "text" },
-		{ id: "city", label: "Город", type: "text" }
+		{ id: "phone", label: "Номер телефона", type: "tel" }
 	];
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log("Form Data:", formData);
+		onFiltersClick(formData);
 	};
 
 	return (
@@ -169,8 +170,7 @@ function UserDetailsWindow({ onClose, userId }) {
 	);
 }
 
-function Table({ onUserClick }) {
-	// const [usersData, setUsersData] = useState([]);
+function Table({ onUserClick, filters }) {
 	const [usersTable, setUsersTable] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -183,9 +183,30 @@ function Table({ onUserClick }) {
 	useEffect(() => {
 		const fetchUsers = async () => {
 			try {
-				const data = await API.get("allUsers");
-				// setUsersData(data.users);
-				renderTableRows(data.users);
+				const data = await API.get("allUsers", 
+					{
+						sortBy: sortConfig.key,
+						order: sortConfig.direction,
+						filters: filters
+					}
+				);
+
+				const tableRows = data.users.map(person =>
+					<tr key={person.id}
+						onClick={() => { onUserClick(person.id) }}
+					>
+						<td>{person.lastName}</td>
+						<td>{person.firstName}</td>
+						<td>{person.maidenName}</td>
+						<td>{person.age}</td>
+						<td>{(person.gender === "male") ? "Мужской" : "Женский"}</td>
+						<td>{person.phone}</td>
+						<td>{person.email}</td>
+						<td>{person.address.country}</td>
+						<td>{person.address.city}</td>
+					</tr>
+				);
+				setUsersTable(tableRows);
 			} catch (err) {
 				console.error(err);
 				setError(err.message);
@@ -195,26 +216,7 @@ function Table({ onUserClick }) {
 		};
 
 		fetchUsers();
-	}, []);
-
-	const renderTableRows = (users) => {
-		const tableRows = users.map(person =>
-			<tr key={person.id}
-				onClick={() => { onUserClick(person.id) }}
-			>
-				<td>{person.lastName}</td>
-				<td>{person.firstName}</td>
-				<td>{person.maidenName}</td>
-				<td>{person.age}</td>
-				<td>{(person.gender === "male") ? "Мужской" : "Женский"}</td>
-				<td>{person.phone}</td>
-				<td>{person.email}</td>
-				<td>{person.address.country}</td>
-				<td>{person.address.city}</td>
-			</tr>
-		);
-		setUsersTable(tableRows);
-	};
+	}, [filters, sortConfig, onUserClick]);
 
 	const handleSort = async (key) => {
 		let newDirection;
@@ -243,28 +245,6 @@ function Table({ onUserClick }) {
 		};
 
 		setSortConfig(newSortConfig);
-
-		try {
-			let sortedData;
-
-			if (newDirection === 'unsorted') {
-				const data = await API.get("allUsers");
-				sortedData = data.users;
-			} else {
-				const data = await API.get("allUsers", {
-					sortBy: key,
-					order: newDirection
-				});
-				sortedData = data.users;
-			}
-
-			// setUsersData(sortedData);
-			renderTableRows(sortedData);
-
-		} catch (err) {
-			console.error(err);
-			setError("Ошибка при сортировке данных");
-		}
 	};
 
 	const getSortIndicator = (key) => {
